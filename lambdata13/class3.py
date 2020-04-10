@@ -1,5 +1,5 @@
 # my_lambdata/class3.py
-​
+
 import pandas
 from datetime import datetime
 # GOAL: refactor from a functional approach to OOP approach
@@ -8,18 +8,17 @@ from datetime import datetime
 # could have the data frame a attribute of the class instance,
 # ... have the existing function a method of the class.
 ​
-​
 class DataTransformer():
     def __init__(self, my_df):
         """
         Params my_df (pandas.DataFrame) with with column called "abbrev" which has state abbrevs
         """
         self.df = my_df.copy()
-​
+
     def another_example(self):
         print("WE'RE DOING ANOTHER THING")
         self.convert_names()
-​
+        ​
     def convert_names(self):
         """
         Creates a new column called "state_name" which has the corresponding state name.
@@ -35,16 +34,16 @@ class DataTransformer():
         #print(type(self.df["abbrev"])) #> <class 'pandas.core.series.Series'>
         self.df["state_name"] = self.df["abbrev"].map(names_map)
         #return self.df
-​
+
     @staticmethod
     def progress_message():
         print(datetime.now())
-​
+        ​
     def do_stuff(self, my_message):
         print(self.df.columns, my_message)
 ​
 if __name__ == "__main__":
-​
+
     df = pandas.DataFrame({"abbrev": ["CT", "CO", "CA", "TX"]})
     transformer = DataTransformer(df)
     print(transformer.df.head())
@@ -52,17 +51,16 @@ if __name__ == "__main__":
     transformer.another_example()
     print(transformer.df.head())
     #transformer.do_stuff("HELLO WEDNESDAY!!!")
-​
-​
+    # ​
     exit()
-​
+
     print("--------------")
     df2 = pandas.DataFrame({"abbrev": ["GA", "NY", "CA", "CO"]})
     transformer2 = DataTransformer(df2)
     print(transformer2.df.head())
     transformer2.convert_names()
     print(transformer2.df.head())
-​
+    ​
     #df = pandas.DataFrame({"abbrev": ["CT", "CO", "CA", "TX"]})
     #print(type(df)) #> pandas.DataFrame
     #full_df = convert_names(df)

@@ -14,7 +14,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     # required if using a md file for long desc
-    # license="MIT",
+    license="MIT",
     url="https://github.com/Lord-Kanzler/lambdata13",
     # keywords="",
     packages=find_packages()  # ["lambdata13"]
